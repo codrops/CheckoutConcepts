@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Checkout Concepts | Demo: Sidebar</title>
+		<meta name="description" content="Some simple ideas for enhancing the checkout process" />
+		<meta name="keywords" content="checkout, button, concept, animated, web design, inspiration" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css" />
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="color-2">
+		<div class="container">
+			<header class="codrops-header">
+				<h1>Checkout Concepts <span>Simple enhancements for the checkout process</span></h1>
+				<div class="codrops-links">
+					<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/TextInputEffects/" title="Previous Demo"><span>Previous Demo</span></a>
+					<a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=22434" title="Back to the article"><span>Back to the Codrops article</span></a>
+				</div>
+				<nav class="codrops-demos">
+					<a href="index.html">Corner Flat</a>
+					<a href="rounded.html">Rounded</a>
+					<a href="boxes.html">Boxes</a>
+					<a href="sidebar.html" class="current-demo">Sidebar</a>
+				</nav>
+			</header>
+			<section class="content">
+				<div class="dummy-browser">
+					<div class="dummy-grid dummy-grid--filled dummy-grid--sidebar">
+						<div class="dummy-sidebar">
+							<div class="checkout">
+								<a class="checkout__button" href="#">Checkout</a>
+								<div class="checkout__order">
+									<div class="checkout__order-inner">
+										<table class="checkout__summary">
+											<thead>
+										        <tr><th>Your Order</th><th>Price</th></tr>
+										    </thead>
+										    <tfoot>
+										        <tr><th colspan="2">Total <span class="checkout__total">$56.20</span></th></tr>
+										    </tfoot>
+										    <tbody>
+												<tr><td><strong>Imitations</strong> <span>Mark Lanegan</span></td><td>$9.90</td></tr>
+												<tr><td><strong>In The Silence</strong> <span>Ásgeir</span></td><td>$5.50</td></tr>
+												<tr><td><strong>Out Of Exile</strong> <span>Audioslave</span></td><td>$11.00</td></tr>
+												<tr><td><strong>London</strong> <span>Frank Sinatra</span></td><td>$19.90</td></tr>
+												<tr><td><strong>Cure For Pain</strong> <span>Morphine</span></td><td>$9.90</td></tr>
+											</tbody>
+										</table><!-- /checkout__summary -->
+										<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Continue shopping</button><button class="checkout__option checkout__option--loud">Pay now</button>
+									</div><!-- /checkout__order-inner -->
+								</div><!-- /checkout__order -->
+							</div><!-- /checkout -->
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__item"></div>
+							<div class="dummy-sidebar__overlay"></div>
+						</div>
+						<div class="dummy-grid__item"></div>
+						<div class="dummy-grid__item"></div>
+						<div class="dummy-grid__item"></div>
+						<div class="dummy-grid__item"></div>
+						<div class="dummy-grid__item"></div>
+						<div class="dummy-grid__item"></div>
+					</div><!-- /dummy-grid -->
+				</div>
+			</section> 
+			<section class="content content--related">
+				<p>If you enjoyed this demo you might also like:</p>
+				<a class="media-item" href="http://tympanus.net/Development/DialogEffects/">
+					<img class="media-item__img" src="img/related/DialogEffects.jpg" />
+					<h3 class="media-item__title">Dialog Effects</h3>
+				</a>
+				<a class="media-item" href="http://tympanus.net/Development/ButtonComponentMorph/">
+					<img class="media-item__img" src="img/related/MorphingButtons.jpg" />
+					<h3 class="media-item__title">Morphing Buttons</h3>
+				</a>
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( '.checkout' ) ).forEach( function( el ) {
+					var openCtrl = el.querySelector( '.checkout__button' ),
+						closeCtrls = el.querySelectorAll( '.checkout__cancel' );
+
+					openCtrl.addEventListener( 'click', function(ev) {
+						ev.preventDefault();
+						classie.add( el, 'checkout--active' );
+					} );
+
+					[].slice.call( closeCtrls ).forEach( function( ctrl ) {
+						ctrl.addEventListener( 'click', function() {
+							classie.remove( el, 'checkout--active' );
+						} );
+					} );
+				} );
+			})();
+		</script>
+	</body>
+</html>
